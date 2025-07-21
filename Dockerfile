@@ -5,6 +5,7 @@ ARG VITE_OPENAI_API_ENDPOINT
 ARG VITE_LLM_MODEL_NAME
 ARG VITE_HIDE_CHARTDB_CLOUD
 ARG VITE_DISABLE_ANALYTICS
+ARG VITE_API_BASE
 
 WORKDIR /usr/src/app
 
@@ -15,11 +16,13 @@ RUN npm ci
 COPY . .
 
 RUN echo "VITE_OPENAI_API_KEY=${VITE_OPENAI_API_KEY}" > .env && \
+    echo "VITE_API_BASE=${VITE_API_BASE}" >> .env && \
     echo "VITE_OPENAI_API_ENDPOINT=${VITE_OPENAI_API_ENDPOINT}" >> .env && \
     echo "VITE_LLM_MODEL_NAME=${VITE_LLM_MODEL_NAME}" >> .env && \
     echo "VITE_HIDE_CHARTDB_CLOUD=${VITE_HIDE_CHARTDB_CLOUD}" >> .env && \
     echo "VITE_DISABLE_ANALYTICS=${VITE_DISABLE_ANALYTICS}" >> .env
 
+ENV NODE_OPTIONS=--max-old-space-size=4096
 RUN npm run build
 
 FROM nginx:stable-alpine AS production

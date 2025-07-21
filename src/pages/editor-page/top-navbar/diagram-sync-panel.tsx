@@ -122,7 +122,6 @@ export const DiagramSyncPanel = () => {
                 gap: '0.5rem',
                 padding: '0.25rem 1rem',
                 height: '100%',
-                paddingLeft: '26px',
             }}
         >
             <div style={{ position: 'relative' }}>
@@ -144,7 +143,7 @@ export const DiagramSyncPanel = () => {
                     disabled={loading}
                     style={{
                         // appearance: 'none',
-                        padding: '0.3rem 2rem 0.3rem 0.8rem',
+                        padding: '0.3rem 2rem 0.3rem 1.8rem',
                         borderRadius: '4px',
                         border: '1px solid #555',
                         backgroundColor: '#e5e5ea',
