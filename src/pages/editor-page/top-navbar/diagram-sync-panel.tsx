@@ -41,7 +41,7 @@ export const DiagramSyncPanel = () => {
 
     useEffect(() => {
         fetchVersions();
-    });
+    }, []);
 
     const formatTime = (isoUtcString: string) => {
         return new Intl.DateTimeFormat('tr-TR', {

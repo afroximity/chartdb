@@ -28,7 +28,6 @@ export default [
             'eslint:recommended',
             'plugin:react/recommended',
             'plugin:@typescript-eslint/recommended',
-            'plugin:react-hooks/recommended',
             'plugin:css-modules/recommended',
             'plugin:tailwindcss/recommended',
             'plugin:prettier/recommended'
